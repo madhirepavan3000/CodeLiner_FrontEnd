@@ -1,0 +1,540 @@
+.page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: radial-gradient(circle at top right, rgba(12, 73, 207, 0.18), transparent 20%),
+    radial-gradient(circle at left center, rgba(24, 121, 255, 0.08), transparent 18%),
+    linear-gradient(180deg, #020816 0%, #040b17 100%);
+  color: #edf1fb;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.screen {
+  width: min(1240px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 64px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 20px;
+  margin: 0 auto 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 18px;
+  z-index: 80;
+}
+
+.brand {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+  justify-content: center;
+}
+
+.navLink {
+  font-size: 0.92rem;
+  color: #d7e0ff;
+  opacity: 0.86;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  opacity: 1;
+  color: #fbfcff;
+}
+
+.headerCta {
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  background: transparent;
+  color: #f8fbff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.heroSection {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.heroContent {
+  grid-column: span 5;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.heroIntro {
+  font-size: clamp(3rem, 4.5vw, 5.6rem);
+  font-weight: 700;
+  line-height: 0.95;
+  max-width: 620px;
+}
+
+.heroText {
+  max-width: 560px;
+  line-height: 1.8;
+  color: #c4cfec;
+  font-size: 1rem;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.primaryButton,
+.secondaryButton,
+.outlineButton,
+.cardAction {
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.primaryButton {
+  padding: 16px 34px;
+  background: linear-gradient(135deg, #1577ff 0%, #305cff 100%);
+  color: white;
+  box-shadow: 0 18px 40px rgba(35, 84, 197, 0.25);
+}
+
+.secondaryButton {
+  padding: 16px 34px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #f6f8ff;
+}
+
+.heroVisualArea {
+  grid-column: span 7;
+  position: relative;
+  min-height: 620px;
+}
+
+.heroVisual {
+  width: 100%;
+  min-height: 520px;
+  border-radius: 2.5rem;
+  box-shadow: 0 48px 120px rgba(0, 0, 0, 0.42);
+  overflow: hidden;
+  position: relative;
+}
+
+.heroVisual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visualGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 40% 30%, rgba(18, 110, 255, 0.18), transparent 22%),
+    radial-gradient(circle at 70% 80%, rgba(7, 133, 255, 0.12), transparent 14%);
+}
+
+.visualSurface {
+  position: absolute;
+  inset: 18px;
+  border-radius: 2rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.08));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.accountCard,
+.activityCard {
+  position: absolute;
+  width: min(420px, calc(100% - 52px));
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 28px;
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.22);
+  color: #09101b;
+}
+
+.accountCard {
+  top: 28px;
+  right: -24px;
+  max-width: 380px;
+}
+
+.activityCard {
+  bottom: -16px;
+  left: 8px;
+  max-width: 370px;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.avatarRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #9cb1ff 0%, #4e6bf4 100%);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.24);
+}
+
+.cardName {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.cardSub {
+  font-size: 0.95rem;
+  color: #5f6d84;
+}
+
+.notificationIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 14px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.balanceLabel {
+  opacity: 0.72;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.balanceAmount {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.cardActions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.cardAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  padding: 14px 12px;
+  background: rgba(251, 251, 251, 0.85);
+  color: #111827;
+  min-height: 58px;
+  border-radius: 18px;
+}
+
+.iconSquare,
+.iconCircle,
+.iconGrid,
+.transactionIcon,
+.solutionIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  background: #eef4ff;
+}
+
+.iconCircle {
+  background: rgba(255, 236, 180, 0.42);
+}
+
+.iconGrid {
+  background: rgba(216, 219, 255, 0.8);
+}
+
+.activityCard {
+  color: #0f172a;
+}
+
+.activityHeader {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filterPill {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.88);
+  color: #475569;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.filterActive {
+  background: #0f3bcc;
+  border-color: transparent;
+  color: white;
+}
+
+.transactionRow {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.transactionIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #6564ff 0%, #5176f9 100%);
+}
+
+.transactionTitle {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.transactionDate {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.transactionAmount {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.trustedSection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 56px;
+  padding: 24px 28px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+}
+
+.trustedLabel {
+  color: #99a7c7;
+  font-size: 0.95rem;
+  flex: 0 0 auto;
+}
+
+.trustedLogos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(88px, min-content));
+  gap: 18px;
+  align-items: center;
+}
+
+.trustedLogo {
+  opacity: 0.78;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+}
+
+.solutionSection {
+  display: grid;
+  gap: 38px;
+}
+
+.solutionIntro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.solutionIntro h2 {
+  font-size: clamp(2rem, 2.4vw, 3rem);
+  max-width: 700px;
+}
+
+.outlineButton {
+  padding: 15px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background: transparent;
+  color: #f8fbff;
+}
+
+.solutionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.solutionCard {
+  padding: 36px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.solutionCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 80px rgba(3, 7, 18, 0.5);
+}
+
+.solutionIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.solutionCard h3 {
+  font-size: 1.25rem;
+  margin-top: 4px;
+}
+
+.solutionCard p {
+  color: #b8c5e2;
+  line-height: 1.8;
+}
+
+.solutionLink {
+  color: #68b1ff;
+  font-weight: 700;
+}
+
+@media (max-width: 1080px) {
+  .heroSection {
+    grid-template-columns: 1fr;
+  }
+
+  .heroContent {
+    grid-column: span 12;
+  }
+
+  .heroVisualArea {
+    grid-column: span 12;
+    min-height: 580px;
+  }
+
+  .accountCard {
+    right: 12px;
+    width: min(100%, 360px);
+  }
+
+  .activityCard {
+    left: 12px;
+    width: min(100%, 340px);
+  }
+
+  .solutionGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .screen {
+    width: min(100%, calc(100% - 24px));
+  }
+
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav {
+    justify-content: center;
+    gap: 16px;
+    order: 3;
+  }
+
+  .headerCta {
+    order: 2;
+  }
+
+  .heroIntro {
+    font-size: clamp(2.4rem, 9vw, 3.8rem);
+  }
+
+  .heroSection {
+    gap: 20px;
+  }
+
+  .heroVisual {
+    min-height: 420px;
+  }
+
+  .accountCard,
+  .activityCard {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .heroVisualArea {
+    min-height: auto;
+  }
+
+  .cardActions {
+    grid-template-columns: 1fr;
+  }
+
+  .trustedSection {
+    padding: 22px;
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(*),
+  :global(*::before),
+  :global(*::after) {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
